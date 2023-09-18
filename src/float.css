@@ -1,0 +1,9 @@
+  #floating-button{
+    width: 120px;
+    height: 70px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+  

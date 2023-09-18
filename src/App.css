@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +31,194 @@
   to {
     transform: rotate(360deg);
   }
+}
+.show-element {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+.hide-element {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.bg-light-green {
+  background-color: #d1e7dd;
+}
+.selecTable {
+  background-color: #ebf5fb;
+  border-radius: 8px;
+}
+.tex-color-white:hover {
+  color: #eee;
+}
+.selecTable:hover {
+  background-color: #5778ff;
+  cursor: pointer;
+}
+.selecTable:hover .fa-check,
+.selecTable:hover .fa-minus {
+  color: #eee;
+}
+
+.table thead th,
+.table td {
+  border: none;
+}
+.boder-nonee {
+  border: none;
+}
+.table tbody td:first-child {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.table tbody td:last-child {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#spacing-row {
+  height: 10px;
+}
+.spa-row {
+  height: 5px;
+}
+@media (max-width: 575px) {
+  .container {
+    width: 125%;
+    padding: 20px 10px;
+  }
+}
+
+/** css input */
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+.frm_op {
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+  border-width: 3px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+/** switch */
+#time {
+  position: absolute;
+  right: 150vw;
+}
+#time + label {
+  --i: 0;
+  --j: calc(1 - var(--i));
+  display: grid;
+  grid-gap: 0.5em 0.25em;
+  overflow: hidden;
+  padding: 0.3em;
+  height: 2.5em;
+  border-radius: 1.75em;
+  background: hsl(199, 98%, calc(var(--j)*46%));
+  color: transparent;
+  user-select: none;
+  transition: .3s;
+  cursor: pointer;
+}
+#time + label:before, #time + label:after {
+  width: 2.5em;
+  height: 2em;
+  transition: inherit;
+  content: "";
+}
+#time + label:before {
+  transform-origin: 20%	20%;
+  transform: translate(calc(var(--i)*(100% + 0.25em))) scale(calc(1 - var(--i)*.7));
+  background: yellow;
+  --poly: polygon(44.13371% 12.96169%, 50% 0%, 55.86629% 12.96169%, 59.70571% 13.77778%, 63.4388% 14.99073%, 67.02464% 16.58726%, 79.38926% 9.54915%, 76.5165% 23.4835%, 79.14297% 26.40049%, 81.45015% 29.57604%, 83.41274% 32.97536%, 97.55283% 34.54915%, 87.03831% 44.13371%, 87.44861% 48.0374%, 87.44861% 51.9626%, 87.03831% 55.86629%, 97.55283% 65.45085%, 83.41274% 67.02464%, 81.45015% 70.42396%, 79.14297% 73.59951%, 76.5165% 76.5165%, 79.38926% 90.45085%, 67.02464% 83.41274%, 63.4388% 85.00927%, 59.70571% 86.22222%, 55.86629% 87.03831%, 50% 100%, 44.13371% 87.03831%, 40.29429% 86.22222%, 36.5612% 85.00927%, 32.97536% 83.41274%, 20.61074% 90.45085%, 23.4835% 76.5165%, 20.85703% 73.59951%, 18.54985% 70.42396%, 16.58726% 67.02464%, 2.44717% 65.45085%, 12.96169% 55.86629%, 12.55139% 51.9626%, 12.55139% 48.0374%, 12.96169% 44.13371%, 2.44717% 34.54915%, 16.58726% 32.97536%, 18.54985% 29.57604%, 20.85703% 26.40049%, 23.4835% 23.4835%, 20.61074% 9.54915%, 32.97536% 16.58726%, 36.5612% 14.99073%, 40.29429% 13.77778%);
+  -webkit-clip-path: var(--poly);
+  clip-path: var(--poly);
+}
+#time + label:after {
+  grid-column: 2;
+  border-radius: 50%;
+  transform: translatey(calc(var(--i)*(-100% - 0.5em)));
+  background: radial-gradient(circle at 19% 19%, rgba(0, 0, 0, 0) 41%, #ffffff 43%);
+}
+#time:checked + label {
+  --i: 1;
 }
